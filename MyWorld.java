@@ -15,7 +15,11 @@ public class MyWorld extends World
      */
     public MyWorld()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1);
+        //Creates a 800x400 cell world with a 1 pixel cell size.
+        super(800, 400, 1);
+        
+        //Creates the redDevil plane object
+        Plane redDevil = new Plane();
+        
     }
 }
