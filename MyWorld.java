@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * The main world where you play the game
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Jacky Liang
+ * @version Jan 2023
  */
 public class MyWorld extends World
 {
@@ -15,11 +15,27 @@ public class MyWorld extends World
      */
     public MyWorld()
     {    
-        //Creates a 800x400 cell world with a 1 pixel cell size.
-        super(800, 400, 1);
+        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        super(600, 1200, 1); 
         
-        //Creates the redDevil plane object
-        Plane redDevil = new Plane();
+        Plane plane = new Plane();
+        addObject(plane, 300, 1100);
+        
+        spawnEnemy();
+    }
+    
+    /**
+     * Spawns in an enemy at a random stop near the top of the playing field
+     */
+    public void spawnEnemy() {
+        Invader invader = new Invader();
+        int x = Greenfoot.getRandomNumber(600);
+        int y = 100;
+        addObject(invader, x, y);
+    }
+    
+    public void shoot() {
+        Bullet bullet = new Bullet();
         
     }
 }
