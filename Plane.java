@@ -30,4 +30,18 @@ public class Plane extends Actor
         
         
     }
+    
+    /**
+     *  Shoots a bullet out of the plane towards the enemies
+     */
+    public void shootGun() {
+        if(Greenfoot.isKeyDown("a")) {
+            MyWorld world = (MyWorld) getWorld();
+            Bullet bullet = new Bullet();
+            int x = getX();
+            int y = getY();
+            world.addObject(bullet, x, y);
+        }
+        
+    }
 }
