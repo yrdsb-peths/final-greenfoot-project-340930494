@@ -8,6 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Plane extends Actor
 {
+    GreenfootImage planePic = new GreenfootImage("images/plane#1.png");
+    
+    
     /**
      * Act - do whatever the Plane wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -27,21 +30,21 @@ public class Plane extends Actor
         if(Greenfoot.isKeyDown("down")) {
             setLocation(getX(), getY() + 4);
         }
-        
-        
+        if(Greenfoot.isKeyDown("space")) {
+            shootGun();
+        }
+        planePic.scale(50,100);
+        setImage(planePic);
     }
     
     /**
      *  Shoots a bullet out of the plane towards the enemies
      */
     public void shootGun() {
-        if(Greenfoot.isKeyDown("a")) {
-            MyWorld world = (MyWorld) getWorld();
-            Bullet bullet = new Bullet();
-            int x = getX();
-            int y = getY();
-            world.addObject(bullet, x, y);
-        }
-        
+        MyWorld world = (MyWorld) getWorld();
+        Bullet bullet = new Bullet();
+        int x = getX();
+        int y = getY();
+        world.addObject(bullet,x,y);
     }
 }
