@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Bullet here.
+ * The projectile shot by the plane
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Jacky Liang 
+ * @version Jan 2023
  */
 public class Bullet extends Actor
 {

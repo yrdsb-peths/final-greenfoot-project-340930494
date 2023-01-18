@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * the enemy the player will have to kill
+ * The that is attacking the player
  * 
  * @author Jacky Liang
  * @version Jan 2023

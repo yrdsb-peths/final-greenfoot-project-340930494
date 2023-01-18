@@ -3,12 +3,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * The Plane, controlled by the player
  * 
- * @author (Jacky Liang) 
- * @version (Jan 2023)
+ * @author Jacky Liang 
+ * @version Jan 2023
  */
 public class Plane extends Actor
 {
     GreenfootImage planePic = new GreenfootImage("images/plane#1.png");
+    GreenfootSound pew = new GreenfootSound("pew.mp3");
     MyWorld world = (MyWorld) getWorld();
     
     /**
@@ -46,6 +47,7 @@ public class Plane extends Actor
         int x = getX();
         int y = getY();
         world.addObject(bullet,x,y);
+        pew.play();
     }
     
     /**
