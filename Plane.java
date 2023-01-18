@@ -10,7 +10,7 @@ public class Plane extends Actor
 {
     GreenfootImage planePic = new GreenfootImage("images/plane#1.png");
     MyWorld world = (MyWorld) getWorld();
-    
+    GreenfootSound pew = new GreenfootSound("pew.mp3");
     /**
      * Act - do whatever the Plane wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -46,6 +46,7 @@ public class Plane extends Actor
         int x = getX();
         int y = getY();
         world.addObject(bullet,x,y);
+        pew.play();
     }
     
     /**
