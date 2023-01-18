@@ -48,6 +48,9 @@ public class Plane extends Actor
         world.addObject(bullet,x,y);
     }
     
+    /**
+     *  Checks to see if the airplane already has a bullet in the world to decide if its allowed to shoot or not.
+     */
     public boolean canShoot() {
         return getWorld().getObjects(Bullet.class).size() < 1;
     }

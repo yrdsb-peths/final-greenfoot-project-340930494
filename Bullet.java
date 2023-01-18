@@ -30,6 +30,9 @@ public class Bullet extends Actor
         }
     }
     
+    /**
+     *  This method lets the bullet kill the invading alien which resuts in a new one attacking.
+     */
     public void kill() {
         if(isTouching(Invader.class)) {
             removeTouching(Invader.class);

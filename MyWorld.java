@@ -40,6 +40,10 @@ public class MyWorld extends World
         addObject(invader, x, y);
     }
     
+    public void gameOver() {
+        Label gameOverLabel = new Label("Game Over", 100);
+        addObject(gameOverLabel, 300, 450);
+    }
     
     /**
      * Increase score method

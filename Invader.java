@@ -22,9 +22,16 @@ public class Invader extends Actor
         alien.scale(75,75);
         setImage(alien);
         // Kills the players plane
-        removeTouching(Plane.class);
+        MyWorld world = (MyWorld) getWorld();
+        if(getY() == world.getHeight() - 1) {
+            world.gameOver();
+            world.removeObject(this);
+        }
     }
     
+    /**
+     * Increases the speed of the enemy invaders
+     */
     public void setSpeed(int spd) {
         speed = spd;
     }
