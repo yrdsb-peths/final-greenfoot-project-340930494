@@ -19,16 +19,16 @@ public class Plane extends Actor
     {
         // Add your action code here.
         if(Greenfoot.isKeyDown("left")) {
-            move(-10);
+            move(-15);
         }
         if(Greenfoot.isKeyDown("right")) {
-            move(10);
+            move(15);
         }
         if(Greenfoot.isKeyDown("up")) {
-            setLocation(getX(), getY() - 10);
+            setLocation(getX(), getY() - 15);
         }
         if(Greenfoot.isKeyDown("down")) {
-            setLocation(getX(), getY() + 10);
+            setLocation(getX(), getY() + 15);
         }
         if(Greenfoot.isKeyDown("space") && (canShoot())) {
             shootGun();
