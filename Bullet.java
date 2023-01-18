@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Bullet extends Actor
 {
     GreenfootImage pew = new GreenfootImage("images/DerpyBullet.png");
+    
     /**
      * Act - do whatever the Bullet wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -16,10 +17,25 @@ public class Bullet extends Actor
     public void act()
     {
         // Add your action code here.
-        setLocation(getX(), getY() - 1);
+        setLocation(getX(), getY() - 40);
         pew.scale(50,50);
         setImage(pew);
         // Kills enemy upon contact
-        removeTouching(Invader.class);
+        MyWorld world = (MyWorld) getWorld();
+        kill();
+        
+        
+        if(getY() == 0) {
+            world.removeObject(this);
+        }
+    }
+    
+    public void kill() {
+        if(isTouching(Invader.class)) {
+            removeTouching(Invader.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.spawnEnemy();
+            world.increaseScore();
+        }
     }
 }

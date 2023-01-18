@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Plane extends Actor
 {
     GreenfootImage planePic = new GreenfootImage("images/plane#1.png");
-    
+    MyWorld world = (MyWorld) getWorld();
     
     /**
      * Act - do whatever the Plane wants to do. This method is called whenever
@@ -19,18 +19,18 @@ public class Plane extends Actor
     {
         // Add your action code here.
         if(Greenfoot.isKeyDown("left")) {
-            move(-4);
+            move(-10);
         }
         if(Greenfoot.isKeyDown("right")) {
-            move(4);
+            move(10);
         }
         if(Greenfoot.isKeyDown("up")) {
-            setLocation(getX(), getY() - 4);
+            setLocation(getX(), getY() - 10);
         }
         if(Greenfoot.isKeyDown("down")) {
-            setLocation(getX(), getY() + 4);
+            setLocation(getX(), getY() + 10);
         }
-        if(Greenfoot.isKeyDown("space")) {
+        if(Greenfoot.isKeyDown("space") && (canShoot())) {
             shootGun();
         }
         planePic.scale(50,100);
@@ -46,5 +46,9 @@ public class Plane extends Actor
         int x = getX();
         int y = getY();
         world.addObject(bullet,x,y);
+    }
+    
+    public boolean canShoot() {
+        return getWorld().getObjects(Bullet.class).size() < 1;
     }
 }
